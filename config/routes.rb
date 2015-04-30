@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :influencers
   devise_for :brands
+  devise_for :influencers
   root "site#index"
 end
