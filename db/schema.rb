@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430150728) do
+ActiveRecord::Schema.define(version: 20150430201148) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,10 +26,27 @@ ActiveRecord::Schema.define(version: 20150430150728) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "target_industry"
+    t.string   "target_hashtag"
+    t.integer  "target_age_group"
+    t.string   "target_demographic"
+    t.string   "target_location"
   end
 
   add_index "brands", ["email"], name: "index_brands_on_email", unique: true
   add_index "brands", ["reset_password_token"], name: "index_brands_on_reset_password_token", unique: true
+
+  create_table "campaigns", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "industry"
+    t.string   "hashtag"
+    t.integer  "age_group"
+    t.string   "demographic"
+    t.string   "location"
+    t.datetime "expiration_date"
+  end
 
   create_table "industries", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,6 +66,11 @@ ActiveRecord::Schema.define(version: 20150430150728) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "industry"
+    t.integer  "age"
+    t.string   "location"
+    t.string   "occupation"
   end
 
   add_index "influencers", ["email"], name: "index_influencers_on_email", unique: true

@@ -33,7 +33,7 @@ h6 {
     color: #f8f8f8;
     // background: image-url('hash-money-background.png') no-repeat center center;
     background-size: cover;
-    background-color: #ff6600;
+    background-color: #28c101;
 }
 
 .intro-message {
@@ -202,21 +202,21 @@ p.copyright {
 
 
 .createAccountButton {
-    background-color:#ffffff;
+    background-color:#eb3552;
     -moz-border-radius:40px;
     -webkit-border-radius:40px;
     border-radius:40px;
     border:3px solid #ffffff;
     display:inline-block;
     cursor:pointer;
-    color:#eb3554;
+    color:#ffffff;
     font-family:'Varela Round';
     font-size:20px;
     padding:16px 31px;
     text-decoration:none;
 }
 .createAccountButton:hover {
-    background-color:#eb3554;
+    background-color:#eb3552;
 }
 .createAccountButton:active {
     position:relative;
@@ -255,7 +255,7 @@ p.copyright {
 
 .hashMoney {
     font-family: 'Varela Round';
-    color: #28c101;
+    color: #eb3552;
 }
 
 .benefit1 {
@@ -303,7 +303,7 @@ p.copyright {
     text-decoration:none;
 }
 .createBrandButton:hover {
-    background-color:#eb3554;
+    background-color:#ffffff;
 }
 .createBrandButton:active {
     position:relative;
@@ -325,9 +325,20 @@ p.copyright {
     text-decoration:none;
 }
 .createInfluencerButton:hover {
-    background-color:#eb3554;
+    background-color:#ffffff;
 }
 .createInfluencerButton:active {
     position:relative;
     top:1px;
 }
+
+.navbar-default .navbar-brand:hover {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #eb3554;
+}
+
+
+

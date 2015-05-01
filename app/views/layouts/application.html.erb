@@ -4,13 +4,13 @@
   <title>Hashmoney</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag "landing-page" %>
-  <%= stylesheet_link_tag "sidebar" %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render "site/login_modal" %>
+<%= render "site/sign_up_modal" %>
 
 <%= yield %>
-
+<%= javascript_include_tag 'application' %>
 </body>
 </html>
