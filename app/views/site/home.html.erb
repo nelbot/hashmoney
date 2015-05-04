@@ -1,7 +1,7 @@
 <div class="intro-header">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-text navbar-header">
+            <div class="navbar-text navbar-header hello">
                 <a class="navbar-brand" href="#">Ha<span class="hashMoney">$</span>hMoney</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,9 +61,8 @@
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                        <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'createBrandButton' %>
-
-                        <!-- <a href="" class="createBrandButton">Get Started</a> -->
+                        
+                        <a href="<%= new_brand_registration_path %>" class="createBrandButton js-open-modal">Get Started</a>
                     
                 </div>
                 <div class="col-lg-6">
@@ -80,7 +79,7 @@
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
 
-                        <a href="<%= new_influencer_registration_path %>" class="createInfluencerButton">Get Started</a>
+                        <a href="<%= new_influencer_registration_path %>" class="createInfluencerButton js-open-modal-2">Get Started</a>
                 </div>
             </div>
 
@@ -88,7 +87,7 @@
             </div>
         </div>
 
-        <div class="modal fade js-modal" id="sign_up">
+        <div class="modal fade js-modal">
           <div class="modal-dialog">
             <div class="modal-content">
 
@@ -98,12 +97,146 @@
                   <span>&times;</span>
                 </button>
 
-                <h2>This is the modal's header.</h2>
+                <h2>Get Started as a Brand</h2>
               </div>
 
-              <!-- <div class="modal-body">
-                <p>This is the modal's body.</p>
-              </div> -->
+              <div class="modal-body">
+                <h2>Sign up</h2>
+
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
+
+                      <div class="field">
+                        <%= f.label :email %><br />
+                        <%= f.email_field :email, autofocus: true %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :username %><br />
+                        <%= f.text_field :username, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :password %>
+                        <% if @validatable %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <% end %><br />
+                        <%= f.password_field :password, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :password_confirmation %><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                      </div>
+
+                    <h2>Create Campaign</h2>
+
+                      <div class="field">
+                        <%= f.label :target_industry, 'Target Industry' %><br />
+                        <%= f.text_field :target_industry, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_hashtag, 'Target Hashtags' %><br />
+                        <%= f.text_field :target_hashtag, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_age_group, 'Target Age Group' %><br />
+                        <%= f.text_field :target_age_group, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_demographic, 'Target Demographic' %><br />
+                        <%= f.text_field :target_demographic, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_location, 'Target Location' %><br />
+                        <%= f.text_field :target_location, autocomplete: "off" %>
+                      </div>
+
+                      <div class="actions">
+                        <%= f.submit "Sign up" %>
+                      </div>
+                    <% end %>
+
+                    <%= render "brands/shared/links" %>
+
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade js-modal-2">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <!-- Close button -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span>&times;</span>
+                </button>
+
+                <h2>Get Started as an Influencer</h2>
+              </div>
+
+              <div class="modal-body">
+                <h2>Sign up</h2>
+
+                    <%= form_for(influencer, as: influencer_resource_name, url: registration_path(influencer_resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
+
+                      <div class="field">
+                        <%= f.label :email %><br />
+                        <%= f.email_field :email, autofocus: true %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :username %><br />
+                        <%= f.text_field :username, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :password %>
+                        <% if @validatable %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <% end %><br />
+                        <%= f.password_field :password, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :password_confirmation %><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :industry %><br />
+                        <%= f.text_field :industry, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :age %><br />
+                        <%= f.text_field :age, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :location %><br />
+                        <%= f.text_field :location, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :occupation %><br />
+                        <%= f.text_field :occupation, autocomplete: "off" %>
+                      </div>
+
+                      <div class="actions">
+                        <%= f.submit "Sign up" %>
+                      </div>
+                    <% end %>
+
+                    <%= render "influencers/shared/links" %>
+              </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
