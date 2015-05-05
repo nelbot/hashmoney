@@ -1,4 +1,4 @@
 class Industry < ActiveRecord::Base
-  belongs_to :brands
-  belongs_to :influencers
+  has_and_belongs_to_many :brands
+  has_and_belongs_to_many :influencers
 end

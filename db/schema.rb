@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430201148) do
+ActiveRecord::Schema.define(version: 20150505211730) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(version: 20150430201148) do
   add_index "brands", ["email"], name: "index_brands_on_email", unique: true
   add_index "brands", ["reset_password_token"], name: "index_brands_on_reset_password_token", unique: true
 
+  create_table "brands_industries", id: false, force: :cascade do |t|
+    t.integer "brand_id",    null: false
+    t.integer "industry_id", null: false
+  end
+
   create_table "campaigns", force: :cascade do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -51,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150430201148) do
   create_table "industries", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "influencers", force: :cascade do |t|

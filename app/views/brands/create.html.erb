@@ -7,7 +7,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header navigating">
-                <a class="navbar-brand" href="index.html">Ha$hMoney</a>
+                <a class="navbar-brand" href="index.html">Ha<span class="hashMoney">$</span>hMoney</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -238,10 +238,10 @@
                         <li>
                             <a href="index.html"><i class="fa fa-plus fa-fw"></i> Create New Campaign</a>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Expiring Soon</a>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Completed Campaigns</a>
                         </li>
                         <li>
@@ -257,10 +257,10 @@
                             <!-- /input-group -->
                         </li>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Browse Influencers</a>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Influencer Relationships</a>
                         </li>
                     </ul>
@@ -273,107 +273,52 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Your Campaigns</h1>
+                    <h1 class="page-header">Create a Campaign</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>Create<br>New Campaign</h1>
-                                <i class="fa fa-plus fa-fw add-icon"></i>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                              <%= devise_error_messages! %>
+                <div class="col-lg-12">
 
-                            <div class="field">
-                                <%= f.label :target_industry, 'Target Industry' %><br>
-                                <%= f.collection_select(:industries, Industry.all, :id, :name)%>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :target_hashtag, 'Target Hashtags' %><br>
-                                <%= f.text_field :target_hashtag, autocomplete: "off" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :target_age_group, 'Target Age Group' %><br>
-                                <%= f.text_field :target_age_group, autocomplete: "off" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :target_demographic, 'Target Demographic' %><br>
-                                <%= f.text_field :target_demographic, autocomplete: "off" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :target_location, 'Target Location' %><br>
-                                <%= f.text_field :target_location, autocomplete: "off" %>
-                              </div>
-                              <div class="actions">
-                                <br>
-                                <%= f.submit "Create", :class => "create-btn"%>
-                              </div>
-                            <% end %>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
 
-                            </div>
-                          </div>
+                    <div class="field">
+                        <%= f.label :target_industry, 'Target Industry' %>
+                        <%= f.text_field :target_industry, autocomplete: "off" %>
                       </div>
-                </div>
 
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>#HashMoney</h1>
-                              <i class="fa fa-eye fa-fw add-icon"></i>
-                              <h4>View Campaign</h4>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <h5>Campaign Details</h5>
-                              <ul>
-                                <p>Hashtags: #acquirecurrency, #disregardfemales</p>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>#HashMoney</h1>
-                              <i class="fa fa-eye fa-fw add-icon"></i>
-                              <h4>View Campaign</h4>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <h5>Campaign Details</h5>
-                              <ul>
-                                <p>Hashtags: #acquirecurrency, #disregardfemales</p>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                </div>
+                      <div class="field">
+                        <%= f.label :target_hashtag, 'Target Hashtags' %>
+                        <%= f.text_field :target_hashtag, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_age_group, 'Target Age Group' %>
+                        <%= f.text_field :target_age_group, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_demographic, 'Target Demographic' %>
+                        <%= f.text_field :target_demographic, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :target_location, 'Target Location' %>
+                        <%= f.text_field :target_location, autocomplete: "off" %>
+                      </div>
+                      
+                      <div class="actions">
+                        <%= f.submit "Create" %>
+                      </div>
+                    <% end %>
+
+                    
+                </div>     
                 <!-- /.col-lg-4 -->
             </div>
+            <!-- /.row -->
+            
             <!-- /.row -->
             
         </div>
