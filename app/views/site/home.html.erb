@@ -2,7 +2,7 @@
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-text navbar-header hello">
-                <%= image_tag("hash-money-logo.png") %>
+                <%= image_tag("hash-money-logo-2.png") %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -128,34 +128,7 @@
                       <div class="field">
                         <%= f.label :password_confirmation %><br />
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
-                      </div>
-
-                    <h2>Create Campaign</h2>
-
-                      <div class="field">
-                        <%= f.label :target_industry, 'Target Industry' %><br />
-                        <%= f.text_field :target_industry, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :target_hashtag, 'Target Hashtags' %><br />
-                        <%= f.text_field :target_hashtag, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :target_age_group, 'Target Age Group' %><br />
-                        <%= f.text_field :target_age_group, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :target_demographic, 'Target Demographic' %><br />
-                        <%= f.text_field :target_demographic, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :target_location, 'Target Location' %><br />
-                        <%= f.text_field :target_location, autocomplete: "off" %>
-                      </div>
+                      </div> 
 
                       <div class="actions">
                         <%= f.submit "Sign up" %>
@@ -209,26 +182,6 @@
                       <div class="field">
                         <%= f.label :password_confirmation %><br />
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :industry %><br />
-                        <%= f.text_field :industry, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :age %><br />
-                        <%= f.text_field :age, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :location %><br />
-                        <%= f.text_field :location, autocomplete: "off" %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.label :occupation %><br />
-                        <%= f.text_field :occupation, autocomplete: "off" %>
                       </div>
 
                       <div class="actions">

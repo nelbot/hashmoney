@@ -7,7 +7,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header navigating">
-                <a class="navbar-brand" href="index.html">Ha$hMoney</a>
+                <%= image_tag("hash-money-logo-2.png") %>
             </div>
             <!-- /.navbar-header -->
 
@@ -235,8 +235,9 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-plus fa-fw"></i> Request New Campaign</a>
+                    
+                        <li class="disabled">
+                            <a href="index.html"><i class="fa fa-plus fa-fw"></i> Your Campaigns</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Expiring Soon</a>
@@ -257,9 +258,7 @@
                             <!-- /input-group -->
                         </li>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Browse Brands</a>
-                        </li>
+    
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Brand Relationships</a>
                         </li>
@@ -284,30 +283,13 @@
                        <div class="hover panel">
                           <div class="front">
                             <div class="box1 panel-body">
-                              <h1>Create<br>New Campaign</h1>
-                                <i class="fa fa-plus fa-fw add-icon"></i>
+                              <h1>#getmoney</h1>
+                                <i class="fa fa-eye fa-fw add-icon"></i>
+                                <h4>View Campaign</h4>
                             </div>
                           </div>
                           <div class="back">
                             <div class="box2 panel-body">
-                              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                              <%= devise_error_messages! %>
-
-                            <div class="field">
-                                <%= f.label :target_industry, 'Target Industry' %><br>
-                                <%= f.collection_select(:industries, Industry.all, :id, :name)%>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :target_hashtag, 'Target Hashtags' %><br>
-                                <%= f.text_field :target_hashtag, autocomplete: "off" %>
-                              </div>
-                              <div class="actions">
-                                <br>
-                                <%= f.submit "Create", :class => "create-btn"%>
-                              </div>
-                            <% end %>
-
                             </div>
                           </div>
                       </div>
@@ -329,7 +311,7 @@
                             <div class="box2 panel-body">
                               <h5>Campaign Details</h5>
                               <ul>
-                                <p>Hashtags: #acquirecurrency, #disregardfemales</p>
+                                <p>Hashtags: #yoyo, #yoyoyos</p>
                               </ul>
                             </div>
                           </div>

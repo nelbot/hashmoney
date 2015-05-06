@@ -1,12 +1,7 @@
   $(document).ready(function(){
   
-    $('.panel').on('mouseover',function(){
-      $(this).toggleClass('flip');
+    $('.fa-plus').on('click',function(){
+      $(this).closest(".panel").toggleClass('flip');
     });
-
-    $('.panel').on('mouseout',function(){
-      $(this).toggleClass('flip');
-    });
-
 
   });

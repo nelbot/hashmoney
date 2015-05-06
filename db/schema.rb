@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505211730) do
+ActiveRecord::Schema.define(version: 20150506190019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150505211730) do
     t.string   "demographic"
     t.string   "location"
     t.datetime "expiration_date"
+    t.integer  "brand_id"
   end
 
   create_table "industries", force: :cascade do |t|

@@ -1,9 +1,7 @@
 class CampaignsApisController < ApplicationController
   def create
-    p "------------------>~~~~~~~~~"
-    p params
-    p campaign_params
-    campaign = Campaign.new campaign_params
+
+    campaign = current_brand.campaigns.new campaign_params
 
     if campaign.save
       render json: campaign

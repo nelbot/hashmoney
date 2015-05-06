@@ -355,8 +355,9 @@ table.dataTable thead .sorting:after {
 
 /* Extra Styles */
 
-.navigating {
+#brand-dashboard .navigating img {
     margin-left: none;
+    width: 225px;
 }
 
 #brand-dashboard .navbar-brand {
