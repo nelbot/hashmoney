@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150505211730) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "brands", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20150505211730) do
     t.string   "target_location"
   end
 
-  add_index "brands", ["email"], name: "index_brands_on_email", unique: true
-  add_index "brands", ["reset_password_token"], name: "index_brands_on_reset_password_token", unique: true
+  add_index "brands", ["email"], name: "index_brands_on_email", unique: true, using: :btree
+  add_index "brands", ["reset_password_token"], name: "index_brands_on_reset_password_token", unique: true, using: :btree
 
   create_table "brands_industries", id: false, force: :cascade do |t|
     t.integer "brand_id",    null: false
@@ -79,7 +82,7 @@ ActiveRecord::Schema.define(version: 20150505211730) do
     t.string   "occupation"
   end
 
-  add_index "influencers", ["email"], name: "index_influencers_on_email", unique: true
-  add_index "influencers", ["reset_password_token"], name: "index_influencers_on_reset_password_token", unique: true
+  add_index "influencers", ["email"], name: "index_influencers_on_email", unique: true, using: :btree
+  add_index "influencers", ["reset_password_token"], name: "index_influencers_on_reset_password_token", unique: true, using: :btree
 
 end

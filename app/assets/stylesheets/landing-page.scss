@@ -2,6 +2,8 @@
  * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+
+ colors: green #28c101
  */
 
 body,
@@ -30,10 +32,10 @@ h6 {
     padding-top: 0px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 75px;
     text-align: center;
-    color: #f8f8f8;
-    // background: image-url('hash-money-background.png') no-repeat center center;
+    color: #000000;
+    // background: image-url('face-background.png') no-repeat center center;
     background-size: cover;
-    background-color: #28c101;
+    background-color: #ffffff;
 }
 
 .intro-message {
@@ -45,7 +47,7 @@ h6 {
 .intro-message > h1 {
     margin: 0;
     font-size: 60px;
-    color: white;
+    color: #28c101;
 }
 
 .intro-divider {
@@ -111,7 +113,7 @@ h6 {
 .section-heading {
     margin-bottom: 30px;
     text-align: center;
-    color: white;
+    color: #28c101;
 }
 
 .section-heading-spacer {
@@ -182,10 +184,10 @@ p.copyright {
     -moz-border-radius:40px;
     -webkit-border-radius:40px;
     border-radius:40px;
-    border:3px solid #ffffff;
+    border:3px solid #28C101;
     display:inline-block;
     cursor:pointer;
-    color:#ffffff;
+    color:#000000;
     font-family:'Varela Round';
     font-size:20px;
     padding:16px 31px;
@@ -201,7 +203,7 @@ p.copyright {
 
 
 .createAccountButton {
-    background-color:#eb3552;
+    background-color:#28C101;
     -moz-border-radius:40px;
     -webkit-border-radius:40px;
     border-radius:40px;
@@ -245,7 +247,7 @@ p.copyright {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: white;
+    color: #000000;
 }
 
 .create-button {
@@ -284,18 +286,18 @@ p.copyright {
 }
 
 .navbar-default .navbar-text {
-    color: white;
+    color: #000000;
 }
 
 .createBrandButton {
-    background-color:#ffffff;
+    background-color:#28C101;
     -moz-border-radius:40px;
     -webkit-border-radius:40px;
     border-radius:40px;
     border:3px solid #ffffff;
     display:inline-block;
     cursor:pointer;
-    color:#eb3554;
+    color:#ffffff;
     font-family:'Varela Round';
     font-size:20px;
     padding:16px 31px;
@@ -310,14 +312,14 @@ p.copyright {
 }
 
 .createInfluencerButton {
-    background-color:#ffffff;
+    background-color:#28C101;
     -moz-border-radius:40px;
     -webkit-border-radius:40px;
     border-radius:40px;
     border:3px solid #ffffff;
     display:inline-block;
     cursor:pointer;
-    color:#eb3554;
+    color:#ffffff;
     font-family:'Varela Round';
     font-size:20px;
     padding:16px 31px;
@@ -336,15 +338,18 @@ p.copyright {
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-    color: #eb3554;
+    color: #28c101;
 }
 
 .modal-open .modal {
     color: black;
 }
 
-.hello {
-    margin-left: 50px !important;
+.hello img {
+    width: 225px;
+    margin-left: 60px;
 }
+
+
 
 
