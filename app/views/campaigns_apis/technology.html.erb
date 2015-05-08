@@ -236,13 +236,10 @@
                             <!-- /input-group -->
                         </li>
                         <li class="">
-                            <a href="/campaigns/technology"><i class="fa fa-edit fa-fw"></i> New Campaigns</a>
+                            <a href="/influencers/campaigns/<%= current_influencer.industry %>"><i class="fa fa-edit fa-fw"></i> Available Campaigns</a>
                         </li>
                         <li class="">
                             <a href="/influencers/dashboard"><i class="fa fa-plus fa-fw"></i> Your Campaigns</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Expiring Soon</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Completed Campaigns</a>
@@ -274,7 +271,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">New Campaigns</h1>
+                    <h1 class="page-header">Available Campaigns</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -293,8 +290,9 @@
                           </div>
                           <div class="back">
                             <div class="box2 panel-body">
-                                <%= campaign.hashtag %>
-                                <%= campaign.industry %>
+                                <%= campaign.hashtag %><br>
+                                <%= campaign.industry %><br>
+                                <button><%= link_to "Join Campaign", controller: "campaigns_apis", :action => :add_campaign_to_influencer, :current_campaign_id => campaign.id %></button>
                             </div>
                           </div>
                       </div>

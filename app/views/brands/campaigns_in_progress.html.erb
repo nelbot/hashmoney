@@ -1,5 +1,4 @@
 
-
 <div id="brand-dashboard">
 
     <div id="wrapper">
@@ -211,14 +210,13 @@
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
-                        <li class="divider"></li>
                         <li>
-                        <% if current_influencer %>
-                        <%= link_to 'Log Out', destroy_session_path(current_influencer), method: 'delete' %>
+                        <% if current_brand %>
+                            <%= link_to 'Log Out', destroy_session_path(current_brand), method: 'delete' %>
                         <% else %>
-                            <a href="" class="js-open-modal-2">Influencer Login</a>
+                            <a href="" class="js-open-modal">Brand Login</a>
                         <% end %>
-                    </li>
+                        </li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -241,19 +239,18 @@
                             <!-- /input-group -->
                         </li>
                         <li class="">
-
-                            <a href="/influencers/campaigns/<%= current_influencer.industry %>"><i class="fa fa-edit fa-fw"></i> Available Campaigns</a>
+                            <a href="/brands/campaigns/in_progress"><i class="fa fa-edit fa-fw"></i> Campaigns in Progress</a>
+                        </li>
+                         <li class="">
+                            <a href="/brands/dashboard"><i class="fa fa-edit fa-fw"></i> Your Campaigns</a>
                         </li>
                         <li class="disabled">
-                            <a href="index.html"><i class="fa fa-plus fa-fw"></i> Your Campaigns</a>
-                        </li>
-                        <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Completed Campaigns</a>
                         </li>
                         <li>
                             <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search Brands">
+                                <input type="text" class="form-control" placeholder="Search Influencers">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -263,9 +260,9 @@
                             <!-- /input-group -->
                         </li>
                         </li>
-    
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Brand Relationships</a>
+                
+                        <li class="disabled">
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Influencer Relationships</a>
                         </li>
                     </ul>
                 </div>
@@ -282,7 +279,11 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
+        
+                <!-- /.col-lg-4 -->
+                
+         
+            <div class="row">       
                 <% @your_campaigns.each do |campaign| %>
                 <div class="col-lg-4">
                     <div class="wrapper">
@@ -304,16 +305,9 @@
                       </div>
                   </div>
                 </div>
+
                 <% end %>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    
-                </div>
-                <!-- /.col-lg-4 -->
+                <!-- /.col-lg-4
             </div>
             <!-- /.row -->
             
@@ -323,7 +317,6 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
 
 </div>
 

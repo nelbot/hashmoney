@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506190019) do
+ActiveRecord::Schema.define(version: 20150508181927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20150506190019) do
     t.datetime "expiration_date"
     t.integer  "brand_id"
   end
+
+  create_table "campaigns_influencers", id: false, force: :cascade do |t|
+    t.integer "campaign_id",   null: false
+    t.integer "influencer_id", null: false
+  end
+
+  add_index "campaigns_influencers", ["campaign_id", "influencer_id"], name: "index_campaigns_influencers_on_campaign_id_and_influencer_id", using: :btree
+  add_index "campaigns_influencers", ["influencer_id", "campaign_id"], name: "index_campaigns_influencers_on_influencer_id_and_campaign_id", using: :btree
 
   create_table "industries", force: :cascade do |t|
     t.datetime "created_at", null: false

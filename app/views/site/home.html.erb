@@ -136,7 +136,7 @@
                       </div>
                     <% end %>
 
-                    <%= render "brands/shared/links" %>
+                    <%= link_to "Login", new_brand_session_path %>
 
               </div>
             </div><!-- /.modal-content -->
@@ -204,13 +204,15 @@
                         <%= f.label :industry, 'Interests' %><br>
                         <%= f.collection_select(:industry, Industry.all, :name, :name, :class => "target-industry")%>
                       </div>
-
+                      <br>
                       <div class="actions">
                         <%= f.submit "Sign up" %>
                       </div>
                     <% end %>
-
-                    <%= render "influencers/shared/links" %>
+                    <br>
+                    <%= link_to "Login", new_influencer_session_path %><br>
+                    <%= link_to "Forgot your password?", new_influencer_password_path %>
+                    
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->

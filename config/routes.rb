@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   get '/influencers/campaigns/:industry' => 'campaigns_apis#technology'
 
   get '/campaigns' => 'hello#hello'
+
+  get 'campaigns/:current_campaign_id' => 'campaigns_apis#add_campaign_to_influencer'
+
+  get '/brands/campaigns/in_progress' => 'brands#campaigns_in_progress'
 end

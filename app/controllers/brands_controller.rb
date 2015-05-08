@@ -7,6 +7,10 @@ before_action :authenticate_brand!
 
   end
 
+  def campaigns_in_progress
+    @your_campaigns = current_influencer.campaigns
+  end
+
   def create
     
   end

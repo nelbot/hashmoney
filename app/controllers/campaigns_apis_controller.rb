@@ -15,6 +15,13 @@ class CampaignsApisController < ApplicationController
     @campaigns = Campaign.where(industry: @name).order(created_at: :desc)
   end
 
+  def add_campaign_to_influencer
+    @current_campaign = Campaign.find_by_id(params[:current_campaign_id])
+    @current_campaign.influencers.push(current_influencer)
+    
+    redirect_to '/influencers/dashboard'
+  end
+
   private
 
   def campaign_params
