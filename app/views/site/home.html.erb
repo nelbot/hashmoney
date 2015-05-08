@@ -8,18 +8,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <p class="navbar-text">Already have an account?</p>
-                    </li>
-                    <li>
-                    <% if current_brand || current_influencer %>
+                    <% if current_brand %>
                         <%= link_to 'Log Out', destroy_session_path(current_brand), method: 'delete' %>
                     <% else %>
-                        <a href="" class="js-open-modal">Login</a>
+                        <a href="" class="js-open-modal">Brand Login</a>
                     <% end %>
                     </li>
-                    <!-- <li class="create-button">
-                        <a href="#" class="createAccountSmall">Sign up</a>
-                    </li> -->
+                    <li>
+                    <% if current_influencer %>
+                        <%= link_to 'Log Out', destroy_session_path(current_influencer), method: 'delete' %>
+                    <% else %>
+                        <a href="" class="js-open-modal-2">Influencer Login</a>
+                    <% end %>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -182,6 +183,26 @@
                       <div class="field">
                         <%= f.label :password_confirmation %><br />
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :age %><br />
+                        <%= f.text_field :age, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :occupation %><br />
+                        <%= f.text_field :occupation, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :location %><br />
+                        <%= f.text_field :location, autocomplete: "off" %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.label :industry, 'Interests' %><br>
+                        <%= f.collection_select(:industry, Industry.all, :name, :name, :class => "target-industry")%>
                       </div>
 
                       <div class="actions">

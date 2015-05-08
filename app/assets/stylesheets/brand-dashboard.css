@@ -368,6 +368,7 @@ table.dataTable thead .sorting:after {
 #brand-dashboard .navbar-default {
     padding-top: 0px;
     background-color: #F3F3F3;
+
 }
 
 #brand-dashboard .navbar-default .navbar-brand {
@@ -410,7 +411,7 @@ table.dataTable thead .sorting:after {
 
 
 
-.wrapper{ width: 440px; margin: 0 auto;  hoverflow: hidden;}
+.wrapper{ width: 440px; margin: 0 auto;  hoverflow: hidden; padding-bottom: 20px;}
 
 .panel {
     margin: 0 auto;
@@ -478,7 +479,7 @@ table.dataTable thead .sorting:after {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    border: 3px solid grey;
+    border: 3px solid #28C101;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
@@ -489,7 +490,7 @@ table.dataTable thead .sorting:after {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    border: 3px solid grey;
+    border: 3px solid #28C101;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }

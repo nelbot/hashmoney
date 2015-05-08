@@ -10,6 +10,11 @@ class CampaignsApisController < ApplicationController
     end
   end
 
+  def technology
+    @name = params[:industry].capitalize
+    @campaigns = Campaign.where(industry: @name).order(created_at: :desc)
+  end
+
   private
 
   def campaign_params

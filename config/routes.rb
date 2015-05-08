@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :brands, :controllers => { registrations: 'brands/registrations' }
   devise_for :influencers, :controllers => { registrations: 'registrations' }
 
-  resources :campaigns
+  # resources :campaigns
 
   root "site#index"
   get '/brands/dashboard' => 'brands#dashboard'
@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '/influencers/request' => 'influencers#request'
 
   post 'api/campaigns/create' => 'campaigns_apis#create'
+
+  get '/influencers/campaigns/:industry' => 'campaigns_apis#technology'
+
+  get '/campaigns' => 'hello#hello'
 end

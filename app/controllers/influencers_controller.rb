@@ -1,5 +1,6 @@
 class InfluencersController < ApplicationController
-  def dashboard
+
+  def dashboard 
   end
 
   def create

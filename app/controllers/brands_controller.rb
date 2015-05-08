@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-before_action :authenticate_brand!
+before_action :authenticate_brand!  
 
   def dashboard
     @campaign = Campaign.new

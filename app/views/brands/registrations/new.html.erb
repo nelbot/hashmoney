@@ -26,36 +26,6 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-<h2>Create Campaign</h2>
-
-  <div class="field">
-    <%= f.label :target_industry, 'Target Industry' %><br />
-    <%= f.text_field :target_industry, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :target_hashtag, 'Target Hashtags' %><br />
-    <%= f.text_field :target_hashtag, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :target_age_group, 'Target Age Group' %><br />
-    <%= f.text_field :target_age_group, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :target_demographic, 'Target Demographic' %><br />
-    <%= f.text_field :target_demographic, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :target_location, 'Target Location' %><br />
-    <%= f.text_field :target_location, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
 
 <%= render "brands/shared/links" %>

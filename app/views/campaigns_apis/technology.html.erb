@@ -1,4 +1,5 @@
 
+
 <div id="brand-dashboard">
 
     <div id="wrapper">
@@ -210,12 +211,8 @@
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
-                        <li>
-                        <% if current_brand %>
-                            <%= link_to 'Log Out', destroy_session_path(current_brand), method: 'delete' %>
-                        <% else %>
-                            <a href="" class="js-open-modal">Brand Login</a>
-                        <% end %>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -239,21 +236,21 @@
                             <!-- /input-group -->
                         </li>
                         <li class="">
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Inbox</a>
+                            <a href="/campaigns/technology"><i class="fa fa-edit fa-fw"></i> New Campaigns</a>
                         </li>
-                         <li class="">
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Your Campaigns</a>
+                        <li class="">
+                            <a href="/influencers/dashboard"><i class="fa fa-plus fa-fw"></i> Your Campaigns</a>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Expiring Soon</a>
                         </li>
-                        <li class="disabled">
+                        <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Completed Campaigns</a>
                         </li>
                         <li>
                             <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search Influencers">
+                                <input type="text" class="form-control" placeholder="Search Brands">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -263,9 +260,9 @@
                             <!-- /input-group -->
                         </li>
                         </li>
-                
-                        <li class="disabled">
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Influencer Relationships</a>
+    
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Brand Relationships</a>
                         </li>
                     </ul>
                 </div>
@@ -277,91 +274,37 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Your Campaigns</h1>
+                    <h1 class="page-header">New Campaigns</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4 js-form-card">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>Create<br>New Campaign</h1>
-                                <i class="fa fa-plus fa-fw add-icon"></i>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <%= form_for(@campaign) do |f| %>
-                              <%= devise_error_messages! %>
-
-                            <div class="field">
-                                <%= f.label :industry, 'Interests' %><br>
-                                <%= f.collection_select(:industry, Industry.all, :name, :name, :class => "target-industry")%>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :hashtag, 'Hashtags' %><br>
-                                <%= f.text_field :hashtag, autocomplete: "off", :class => "target-hashtag" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :age_group, 'Age Group' %><br>
-                                <%= f.text_field :age_group, autocomplete: "off", :class => "target-age-group" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :demographic, 'Demographic' %><br>
-                                <%= f.text_field :demographic, autocomplete: "off", :class => "target-demographic" %>
-                              </div>
-                              <br>
-                              <div class="field">
-                                <%= f.label :location, 'Location' %><br>
-                                <%= f.text_field :location, autocomplete: "off", :class => "target-location" %>
-                              </div>
-
-                              <div class="actions">
-                                <br>
-                                <%= f.submit "Create", :class => "create-btn js-add-campaign" %>
-                              </div>
-                            <% end %>
-
-                            </div>
-                          </div>
-                      </div>
-                </div>
-
-                </div>
-                <!-- /.col-lg-4 -->
-                
-                <% @brands_campaigns.each do |campaign| %>
-                
+            <% @campaigns.each do |campaign| %>
                 <div class="col-lg-4">
                     <div class="wrapper">
                        <div class="hover panel">
                           <div class="front">
                             <div class="box1 panel-body">
                               <h1>#<%= campaign.hashtag %></h1>
-                              <i class="fa fa-eye fa-fw add-icon"></i>
-                              <h4>View Campaign</h4>
+                                <i class="fa fa-eye fa-fw add-icon"></i>
+                                <h4>View Campaign</h4>
                             </div>
                           </div>
                           <div class="back">
                             <div class="box2 panel-body">
-                              <h5>Campaign Details</h5>
-                              <ul>
-                                <p>Hashtags: </p>
-                              </ul>
+                                <%= campaign.hashtag %>
+                                <%= campaign.industry %>
                             </div>
                           </div>
-                        </div>
-                    </div>
+                      </div>
+                  </div>
                 </div>
-
                 <% end %>
-                <!-- /.col-lg-4
+                <!-- /.col-lg-4 -->
+            
+                
+                <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
             
@@ -371,7 +314,6 @@
     </div>
     <!-- /#wrapper -->
 
+    <!-- jQuery -->
 
 </div>
-
-

@@ -1,7 +1,7 @@
 function addCampaign (event) {
   event.preventDefault();
   var Campaign = {
-    industry: $('#brand_industries').val(),
+    industry: $('#campaign_industry').val(),
     hashtag: $('.target-hashtag').val(),
     age_group: $('.target-age-group').val(), 
     demographic: $('.target-demographic').val(),
@@ -30,9 +30,16 @@ function addCampaign (event) {
 $('.js-add-campaign').on('click', addCampaign);
 
 function fetchCampaign (campaign) {
-    
-    $('.js-form-card').after(buildCardHtml(campaign));
+    // Save the HTML in a variable to do stuff with it
+    var html = $(buildCardHtml(campaign));
 
+    // Find the eye button of this new HTML and attach a click to it
+    html.find('.fa-eye').on('click',function(){
+      $(this).closest(".panel").toggleClass('flip');
+    });
+
+    // Insert the HTML into the browser
+    $('.js-form-card').after(html);
 }
 
 

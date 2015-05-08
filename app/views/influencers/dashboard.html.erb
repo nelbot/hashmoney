@@ -1,4 +1,4 @@
-<body>
+
 
 <div id="brand-dashboard">
 
@@ -212,8 +212,13 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                        <li>
+                        <% if current_influencer %>
+                        <%= link_to 'Log Out', destroy_session_path(current_influencer), method: 'delete' %>
+                        <% else %>
+                            <a href="" class="js-open-modal-2">Influencer Login</a>
+                        <% end %>
+                    </li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -235,7 +240,10 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                    
+                        <li class="">
+
+                            <a href="/influencers/campaigns/<%= current_influencer.industry %>"><i class="fa fa-edit fa-fw"></i> New Campaigns</a>
+                        </li>
                         <li class="disabled">
                             <a href="index.html"><i class="fa fa-plus fa-fw"></i> Your Campaigns</a>
                         </li>
@@ -279,66 +287,17 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>#getmoney</h1>
-                                <i class="fa fa-eye fa-fw add-icon"></i>
-                                <h4>View Campaign</h4>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                            </div>
-                          </div>
-                      </div>
+            
                 </div>
 
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>#HashMoney</h1>
-                              <i class="fa fa-eye fa-fw add-icon"></i>
-                              <h4>View Campaign</h4>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <h5>Campaign Details</h5>
-                              <ul>
-                                <p>Hashtags: #yoyo, #yoyoyos</p>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <div class="wrapper">
-                       <div class="hover panel">
-                          <div class="front">
-                            <div class="box1 panel-body">
-                              <h1>#HashMoney</h1>
-                              <i class="fa fa-eye fa-fw add-icon"></i>
-                              <h4>View Campaign</h4>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="box2 panel-body">
-                              <h5>Campaign Details</h5>
-                              <ul>
-                                <p>Hashtags: #acquirecurrency, #disregardfemales</p>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
@@ -351,17 +310,7 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
 
 </div>
 
-</body>
+

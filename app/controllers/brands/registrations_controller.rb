@@ -1,5 +1,9 @@
 class Brands::RegistrationsController < Devise::RegistrationsController
  
+ def after_sign_in_path_for(resource)
+  redirect_to brands_dashboard_path
+ end
+
  private
 
  def sign_up_params
