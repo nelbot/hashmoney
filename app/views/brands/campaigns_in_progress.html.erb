@@ -297,8 +297,13 @@
                           </div>
                           <div class="back">
                             <div class="box2 panel-body">
-                                <%= campaign.hashtag %>
-                                <%= campaign.industry %>
+                            <h4>Influencers on this campaign:</h4>
+                            <% campaign.influencers.each do |influencer| %>
+                                 
+                                 <%= influencer.username %><br>
+                            <% end %>
+                            <br>
+                                
                                 
                             </div>
                           </div>

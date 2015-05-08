@@ -350,6 +350,7 @@
                               <h5>Campaign Details</h5>
                               <ul>
                                 <p>Hashtags: </p>
+                                <%= link_to('Delete', brands_campaigns_delete_path(campaign), method: :delete, data: { confirm: 'Are you sure?'}) %>
                               </ul>
                             </div>
                           </div>

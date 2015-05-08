@@ -22,6 +22,13 @@ class CampaignsApisController < ApplicationController
     redirect_to '/influencers/dashboard'
   end
 
+  def destroy
+    @current_campaign = Campaign.find_by_id(params[:current_campaign_id])
+    @current_campaign.destroy
+
+    redirect_to '/brands/dashboard'
+  end
+
   private
 
   def campaign_params

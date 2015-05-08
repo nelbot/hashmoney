@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   get '/campaigns' => 'hello#hello'
 
-  get 'campaigns/:current_campaign_id' => 'campaigns_apis#add_campaign_to_influencer'
+  get '/campaigns/:current_campaign_id' => 'campaigns_apis#add_campaign_to_influencer'
 
   get '/brands/campaigns/in_progress' => 'brands#campaigns_in_progress'
+
+  delete '/brands/campaigns/:current_campaign_id/delete' => 'campaigns_apis#destroy', as: :brands_campaigns_delete
 end
