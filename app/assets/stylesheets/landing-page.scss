@@ -30,13 +30,13 @@ h6 {
 
 .intro-header {
     padding-top: 0px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 75px;
+    // padding-bottom: 75px;
     text-align: center;
     color: #000000;
     // background: image-url('background-1.png') no-repeat center center;
     background-size: cover;
     background-color: #ffffff;
-    height: 700px;
+    // height: 700px;
 }
 
 .intro-message {
@@ -357,6 +357,23 @@ a:hover, a:focus {
     margin-top: -20px;
 }
 
+.brand-photo {
+    background: image-url('brand-photo.png') no-repeat center center;
+    height: 500px;
 
+}
 
+.influencer-photo {
+    background: image-url('influencer-photo.png') no-repeat center center;
+    height: 500px;
 
+}
+
+.center {
+    text-align: center;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}

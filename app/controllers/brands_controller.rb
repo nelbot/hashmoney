@@ -14,4 +14,18 @@ before_action :authenticate_brand!
   def create
     
   end
+
+  def tweets_complete
+
+
+    @current_campaign = Campaign.find_by_id(params[:current_campaign_id])
+    @campaign_influencers = @current_campaign.influencers
+
+    @tweets = []
+    @campaign_influencers.each do |influencer|
+    $client.search("from:#{influencer.username} ##{@current_campaign.hashtag}").take(100).collect do |tweet|
+      @tweets.push(tweet.user.screen_name + " " + tweet.text)
+    end
+   end
+  end
 end

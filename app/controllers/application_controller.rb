@@ -9,5 +9,14 @@ class ApplicationController < ActionController::Base
     else
       brands_dashboard_path
    end
- end
+  end
+
+  $client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "85eU1gTcEK57lztgCwtzVVpeQ"
+  config.consumer_secret     = "yDxvZFXu6C3FhRbLmt7VePIdpknW8reqBIMLlTWiGkrQiPWz5s"
+  config.access_token        = "75638195-cc8rJKyivp5JFoZvTPN3xJqPIxPa6xQ4TK2BjcmYN"
+  config.access_token_secret = "myPYGhXbMxSJDShWuWp6LLylgGhcOicPVxKfLOL4hPnZO"
+  end
+
+
 end

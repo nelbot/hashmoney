@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   get '/brands/campaigns/in_progress' => 'brands#campaigns_in_progress'
 
   delete '/brands/campaigns/:current_campaign_id/delete' => 'campaigns_apis#destroy', as: :brands_campaigns_delete
+
+  get 'brands/campaigns/completed/:current_campaign_id' => 'brands#tweets_complete', as: :brands_tweets_complete
+  
 end

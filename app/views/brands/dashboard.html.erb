@@ -244,8 +244,8 @@
                          <li class="">
                             <a href="/brands/dashboard"><i class="fa fa-edit fa-fw"></i> Your Campaigns</a>
                         </li>
-                        <li class="disabled">
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Completed Campaigns</a>
+                        <li class="">
+                            
                         </li>
                         <li>
                             <li class="sidebar-search">
@@ -351,12 +351,14 @@
                               <ul>
                                 <p>Hashtags: </p>
                                 <%= link_to('Delete', brands_campaigns_delete_path(campaign), method: :delete, data: { confirm: 'Are you sure?'}) %>
+                                <p>Check if Influencers have completed campaign</p>
+                                <%= link_to('Campaign completed by:', brands_tweets_complete_path(campaign)) %>
                               </ul>
                             </div>
                           </div>
                         </div>
                     </div>
-                </div>
+                </div>  
 
                 <% end %>
                 <!-- /.col-lg-4

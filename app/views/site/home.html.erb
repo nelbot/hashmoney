@@ -30,8 +30,6 @@
 
     <!-- Header -->
 
-        <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="intro-message">
@@ -49,8 +47,17 @@
                             </li>
                         </ul>
                     </div>
+                  </div>
+                </div>
+</div>
+ 
+        <div class="containter-fluid">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 brand-photo">
+                  
+                    
+                </div>
+                <div class="col-lg-6 center">
                     <div class="clearfix"></div>
                     <h1 class="section-heading">Brands</h1>
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -65,9 +72,11 @@
                     </div>
                         
                         <a href="<%= new_brand_registration_path %>" class="createBrandButton js-open-modal">Get Started</a>
-                    
                 </div>
-                <div class="col-lg-6">
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 center">
                     <div class="clearfix"></div>
                     <h1 class="section-heading">Influencers</h1>
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -82,12 +91,14 @@
                     </div>
 
                         <a href="<%= new_influencer_registration_path %>" class="createInfluencerButton js-open-modal-2">Get Started</a>
+                    
+                </div>
+                <div class="col-lg-6 influencer-photo">
+                    
                 </div>
             </div>
-
-                </div>
-            </div>
-        </div>
+          </div>
+      </div>
 
         <div class="modal fade js-modal">
           <div class="modal-dialog">

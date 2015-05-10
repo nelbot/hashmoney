@@ -8,9 +8,9 @@
       $(this).closest(".panel").toggleClass('flip');
     });
 
-    $('.back').on('click',function(){
-      $(this).closest(".panel").toggleClass('flip');
-    });
+    // $('.back').on('click',function(){
+    //   $(this).closest(".panel").toggleClass('flip');
+    // });
 
 
   });
