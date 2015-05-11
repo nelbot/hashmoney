@@ -13,7 +13,7 @@
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Hello <%= current_brand.username.capitalize %>  <i class="fa fa-caret-down"></i>
+                        Hello <%= current_brand.username %>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -44,7 +44,7 @@
                             <a href="/brands/campaigns/in_progress"><i class="fa fa-spinner fa-fw"></i> Campaigns in Progress</a>
                         </li>
                         <li class="">
-                            <a href="forms.html"><i class="fa fa-check fa-fw"></i> Completed Campaigns</a>
+                            <a href="/brands/campaigns/completed"><i class="fa fa-check fa-fw"></i> Completed Campaigns</a>
                         </li>
                     </ul>
                 </div>
@@ -74,14 +74,22 @@
                             <div class="box1 panel-body">
                               <h1>#<%= campaign.hashtag %></h1>
                                 <i class="fa fa-eye fa-fw add-icon"></i>
-                                <h4>View Campaign</h4>
+                                <h4>View Campaign Details</h4>
                             </div>
                           </div>
                           <div class="back">
                             <div class="box2 panel-body">
+                            <h3 class="campaign-details">Campaign Details</h3>
+                              <ul>
+                                <p>Industry: <%= campaign.industry %></p>
+                                <p>Hashtag: #<%= campaign.hashtag %></p>
+                                <p>Age Group: <%= campaign.age_group %></p>
+                                <p>Demographic: <%= campaign.demographic %></p>
+                                <p>Location: <%= campaign.location %></p>
+                              </ul>
+                            <br>
                             <h4>Influencers on this campaign:</h4>
                             <% campaign.influencers.each do |influencer| %>
-                                 
                                  <%= influencer.username %><br>
                             <% end %>
                             <br>
