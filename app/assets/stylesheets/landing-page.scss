@@ -114,7 +114,8 @@ h6 {
 .section-heading {
     margin-bottom: 30px;
     text-align: center;
-    color: #28c101;
+    color: #000000;
+    padding-top: 15%;
 }
 
 .section-heading-spacer {
@@ -376,4 +377,35 @@ a:hover, a:focus {
 .row {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.footer-call {
+    background-color: #28c101;
+    background-size: cover;
+    height: 400px;
+    color: white;
+}
+
+.footer-call h1 {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+
+.brand-benefits {
+    padding-bottom: 20px;
+}
+
+.influencer-benefits {
+    padding-bottom: 20px;
+}
+
+.login {
+    display: inline;
+    float: left;
+}
+
+.signup {
+    display: inline;
+    float: right;
 }

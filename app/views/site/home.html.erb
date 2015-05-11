@@ -9,16 +9,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                     <% if current_brand %>
-                        <%= link_to 'Log Out', destroy_session_path(current_brand), method: 'delete' %>
-                    <% else %>
-                        <a href="" class="js-open-modal">Brand Login</a>
-                    <% end %>
-                    </li>
-                    <li>
-                    <% if current_influencer %>
+                        <%= link_to 'Log Out', destroy_session_path(current_brand, current_influencer), method: 'delete' %>
+                    <% elsif current_influencer %>
                         <%= link_to 'Log Out', destroy_session_path(current_influencer), method: 'delete' %>
                     <% else %>
-                        <a href="" class="js-open-modal-2">Influencer Login</a>
+                        <a href="" class="js-open-login-modal login">Log In</a>
+                        <a href="" class="js-open-signup-modal signup">Sign Up</a>
                     <% end %>
                     </li>
                 </ul>
@@ -43,7 +39,7 @@
                             </li>
     
                             <li>
-                                <a href="#" class="createAccountButton">Get Started</a>
+                                <a href="" class="createBrandButton js-open-signup-modal">Get Started</a>
                             </li>
                         </ul>
                     </div>
@@ -60,18 +56,11 @@
                 <div class="col-lg-6 center">
                     <div class="clearfix"></div>
                     <h1 class="section-heading">Brands</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
                     <div class="brand-benefits">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p class="lead">Your social campaigns just got easier. HashMoney takes care of all the hard work of creating social campaigns by matching you up with the relevant influencers in your industry, automatically. Whether your a local pizza shop or an international company, you will always reach your target demographic. </p>
                     </div>
                         
-                        <a href="<%= new_brand_registration_path %>" class="createBrandButton js-open-modal">Get Started</a>
+                        <!-- <a href="<%= new_brand_registration_path %>" class="createBrandButton js-open-modal">Get Started</a> -->
                 </div>
             </div>
 
@@ -79,18 +68,11 @@
                 <div class="col-lg-6 center">
                     <div class="clearfix"></div>
                     <h1 class="section-heading">Influencers</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
                     <div class="influencer-benefits">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p class="lead">You love to show off your favorite brands so why not get paid for it? HashMoney connects you with the most relevant brands without you ever having to reach out to any of them. We take care of all the outreach so you can focus on sharing what you love most.</p>
                     </div>
 
-                        <a href="<%= new_influencer_registration_path %>" class="createInfluencerButton js-open-modal-2">Get Started</a>
+                        <!-- <a href="<%= new_influencer_registration_path %>" class="createInfluencerButton js-open-modal-2">Get Started</a> -->
                     
                 </div>
                 <div class="col-lg-6 influencer-photo">
@@ -100,9 +82,140 @@
           </div>
       </div>
 
+      <div class="container-fluid footer-call">
+        <div class="row">
+          <div class="col-lg-12 center">
+            <h1>Say hello to your next 6,000,000,000 followers.</h1>
+            <a href="" class="createBrandButton js-open-signup-modal">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="modal fade js-signup-modal">
+        <div class="modal-dialog">
+          <div class="modal-content center">
+            <div class="modal-header">
+              <h1>Which of these best describes you?</h1>
+            </div>
+            <div class="modal-body">
+              <h1><a href="<%= new_brand_registration_path %>" class="createBrandButton js-open-modal">Brand</a></h1>
+              <p>or</p>
+              <h1><a href="<%= new_influencer_registration_path %>" class="createInfluencerButton js-open-modal-2">Influencer</a></h1>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade js-login-modal">
+        <div class="modal-dialog">
+          <div class="modal-content center">
+            <div class="modal-header">
+              <h1>Welcome Back!</h1>
+            </div>
+            <div class="modal-body">
+              <h1><a href="<%= new_brand_session_path %>" class="createBrandButton js-open-login-brand-modal">Brand</a></h1>
+              <p>or</p>
+              <h1><a href="<%= new_influencer_session_path %>" class="createInfluencerButton js-open-login-influencer-modal">Influencer</a></h1>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade js-login-brand-modal">
+          <div class="modal-dialog">
+            <div class="modal-content center">
+
+              <div class="modal-header">
+                <!-- Close button -->
+                
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <h2>Log in as a Brand</h2>
+
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <br>
+                    <div class="field">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true %>
+                    </div>
+                    <br>
+                    <div class="field">
+                      <%= f.label :password %><br />
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+                    <br>
+                    <% if devise_mapping.rememberable? -%>
+                      <div class="field">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                    <% end -%>
+                    <br>
+
+                    <div class="actions">
+                      <%= f.submit "Log In" %>
+                    </div>
+                    <br>
+                  <% end %>
+
+                
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade js-login-influencer-modal">
+          <div class="modal-dialog">
+            <div class="modal-content center">
+
+              <div class="modal-header">
+                <!-- Close button -->
+                
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <h2>Log In as an Influencer</h2>
+
+                  <%= form_for(influencer, as: influencer_resource_name, url: session_path(influencer_resource_name)) do |f| %>
+                    <br>
+                    <div class="field">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true %>
+                    </div>
+                    <br>
+                    <div class="field">
+                      <%= f.label :password %><br />
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+                    <br>
+                    <% if devise_mapping.rememberable? -%>
+                      <div class="field">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                    <% end -%>
+                    <br>
+                    <div class="actions">
+                      <%= f.submit "Log In" %>
+                    </div>
+                  <% end %>
+                    <br>
+
+
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
         <div class="modal fade js-modal">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content center">
 
               <div class="modal-header">
                 <!-- Close button -->
@@ -118,17 +231,17 @@
 
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                       <%= devise_error_messages! %>
-
+                      <br>
                       <div class="field">
                         <%= f.label :email %><br />
                         <%= f.email_field :email, autofocus: true %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :username %><br />
                         <%= f.text_field :username, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :password %>
                         <% if @validatable %>
@@ -136,18 +249,18 @@
                         <% end %><br />
                         <%= f.password_field :password, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :password_confirmation %><br />
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
                       </div> 
-
+                      <br>
                       <div class="actions">
                         <%= f.submit "Sign up" %>
                       </div>
                     <% end %>
-
-                    <%= link_to "Login", new_brand_session_path %>
+                    <br>
+                    <%= link_to "Log In", new_brand_session_path %>
 
               </div>
             </div><!-- /.modal-content -->
@@ -156,7 +269,7 @@
 
         <div class="modal fade js-modal-2">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content center">
 
               <div class="modal-header">
                 <!-- Close button -->
@@ -172,17 +285,17 @@
 
                     <%= form_for(influencer, as: influencer_resource_name, url: registration_path(influencer_resource_name)) do |f| %>
                       <%= devise_error_messages! %>
-
+                      <br>
                       <div class="field">
                         <%= f.label :email %><br />
                         <%= f.email_field :email, autofocus: true %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :username %><br />
                         <%= f.text_field :username, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :password %>
                         <% if @validatable %>
@@ -190,27 +303,27 @@
                         <% end %><br />
                         <%= f.password_field :password, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :password_confirmation %><br />
                         <%= f.password_field :password_confirmation, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :age %><br />
                         <%= f.text_field :age, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :occupation %><br />
                         <%= f.text_field :occupation, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :location %><br />
                         <%= f.text_field :location, autocomplete: "off" %>
                       </div>
-
+                      <br>
                       <div class="field">
                         <%= f.label :industry, 'Interests' %><br>
                         <%= f.collection_select(:industry, Industry.all, :name, :name, :class => "target-industry")%>
@@ -221,7 +334,7 @@
                       </div>
                     <% end %>
                     <br>
-                    <%= link_to "Login", new_influencer_session_path %><br>
+                    <%= link_to "Log In", new_influencer_session_path %><br>
                     <%= link_to "Forgot your password?", new_influencer_password_path %>
                     
               </div>
