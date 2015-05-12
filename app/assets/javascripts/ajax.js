@@ -59,7 +59,11 @@ function buildCardHtml (campaign) {
               <div class="box2 panel-body">\
                 <h5>Campaign Details</h5>\
                 <ul>\
-                  <p>Hashtags: </p>\
+                  <p>Industry: ' + campaign.industry + '</p>\
+                  <p>Hashtag: ' + campaign.hashtag + '</p>\
+                  <p>Age Group: ' + campaign.age_group + '</p>\
+                  <p>Demographic: ' + campaign.demographic + '</p>\
+                  <p>Location: ' + campaign.location + '</p>\
                 </ul>\
               </div>\
             </div>\
