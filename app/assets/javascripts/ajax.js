@@ -45,30 +45,31 @@ function fetchCampaign (campaign) {
 
 function buildCardHtml (campaign) {
   return '\
-    <div class="col-lg-4">\
-      <div class="wrapper">\
-         <div class="hover panel">\
-            <div class="front">\
-              <div class="box1 panel-body">\
-                <h1>#' + campaign.hashtag + '</h1>\
-                <i class="fa fa-eye fa-fw add-icon"></i>\
-                <h4>View Campaign</h4>\
+      <div class="col-lg-4">\
+        <div class="wrapper">\
+           <div class="hover panel">\
+              <div class="front">\
+                <div class="box1 panel-body">\
+                  <h1>#' + campaign.hashtag + '</h1>\
+                  <i class="fa fa-eye fa-fw add-icon"></i>\
+                  <h4>View Campaign</h4>\
+                </div>\
+              </div>\
+              <div class="back">\
+                <div class="box2 panel-body">\
+                  <h3>Campaign Details</h3>\
+                  <ul>\
+                    <p>Industry: ' + campaign.industry + '</p>\
+                    <p>Hashtag: ' + campaign.hashtag + '</p>\
+                    <p>Age Group: ' + campaign.age_group + '</p>\
+                    <p>Demographic: ' + campaign.demographic + '</p>\
+                    <p>Location: ' + campaign.location + '</p>\
+                  </ul>\
+                </div>\
               </div>\
             </div>\
-            <div class="back">\
-              <div class="box2 panel-body">\
-                <h5>Campaign Details</h5>\
-                <ul>\
-                  <p>Industry: ' + campaign.industry + '</p>\
-                  <p>Hashtag: ' + campaign.hashtag + '</p>\
-                  <p>Age Group: ' + campaign.age_group + '</p>\
-                  <p>Demographic: ' + campaign.demographic + '</p>\
-                  <p>Location: ' + campaign.location + '</p>\
-                </ul>\
-              </div>\
-            </div>\
-          </div>\
-      </div>\
-  </div>'
+        </div>\
+      </div>'
+
 }
 
