@@ -20,8 +20,9 @@ before_action :authenticate_brand!
 
     @campaigns.each do |campaign|
       campaign.influencers.each do |influencer|
-         $client.search("from:#{influencer.username} ##{campaign.hashtag}").collect do |tweet|
+         $client.search("from:#{influencer.username} #{campaign.hashtag}").collect do |tweet|
             campaign.completed = true if tweet.is_a?(Twitter::Tweet)
+            campaign.save
          end
         end
       end

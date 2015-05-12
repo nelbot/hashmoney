@@ -137,7 +137,6 @@
                                 <p>Demographic: <%= campaign.demographic %></p>
                                 <p>Location: <%= campaign.location %></p>
                                 <br><br>
-                                <p><button><%= link_to('Campaign complete?', brands_tweets_complete_path(campaign)) %></button></p>
                                 <p><button><%= link_to('Delete', brands_campaigns_delete_path(campaign), method: :delete, data: { confirm: 'Are you sure?'}) %></button></p>
         
                               </ul>
