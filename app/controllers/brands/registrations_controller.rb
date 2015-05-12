@@ -1,7 +1,7 @@
 class Brands::RegistrationsController < Devise::RegistrationsController
  
  def after_sign_in_path_for(resource)
-  redirect_to brands_dashboard_path
+  brands_dashboard_path #dont add redirect to this
  end
 
  private

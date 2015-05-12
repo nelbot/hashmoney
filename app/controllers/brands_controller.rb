@@ -11,9 +11,9 @@ before_action :authenticate_brand!
     @your_campaigns = current_brand.campaigns.where(completed: nil).order(created_at: :desc)
   end
 
-  def create
+  # def create
     
-  end
+  # end
 
   def completed_campaigns
     @campaigns = current_brand.campaigns
